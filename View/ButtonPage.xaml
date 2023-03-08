@@ -1,0 +1,169 @@
+﻿<UserControl
+    x:Class="RhymeThemeDemo.View.ButtonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rhymeTheme="http://virtualdmp.rhyme/xaml/themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="默认按钮 (Tonal button)" />
+            <StackPanel Margin="0,16,8,8" Orientation="Horizontal">
+                <Button Margin="8,0" Content="默认按钮" />
+
+                <Button
+                    Margin="8,0"
+                    Content="默认按钮禁用"
+                    IsEnabled="False" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="默认按钮带图标" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="默认按钮带图标禁用"
+                    IsEnabled="False" />
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="高亮按钮 (Primary button)" />
+            <StackPanel Margin="0,16,8,8" Orientation="Horizontal">
+                <Button
+                    Margin="8,0"
+                    Content="高亮按钮"
+                    Style="{StaticResource Rhyme-Primary-Button}" />
+                <Button
+                    Margin="8,0"
+                    Content="高亮按钮禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Primary-Button}" />
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="高亮按钮带图标"
+                    Style="{StaticResource Rhyme-Primary-Button}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="高亮按钮带图标禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Primary-Button}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="轮廓按钮 (Outlined button)" />
+            <StackPanel Margin="0,16,8,8" Orientation="Horizontal">
+                <Button
+                    Margin="8,0"
+                    Content="轮廓按钮"
+                    Style="{StaticResource Rhyme-Outlined-Button}" />
+                <Button
+                    Margin="8,0"
+                    Content="轮廓按钮禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Outlined-Button}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="轮廓按钮带图标"
+                    Style="{StaticResource Rhyme-Outlined-Button}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="轮廓按钮带图标禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Outlined-Button}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="文本按钮 (Text button)" />
+            <StackPanel Margin="0,16,8,8" Orientation="Horizontal">
+                <Button
+                    Margin="8,0"
+                    Content="文本按钮"
+                    Style="{StaticResource Rhyme-Text-Button}" />
+                <Button
+                    Margin="8,0"
+                    Content="文本按钮禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Text-Button}" />
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="文本按钮带图标"
+                    Style="{StaticResource Rhyme-Text-Button}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="文本按钮带图标禁用"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Text-Button}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="图标按钮 (Icon button)" />
+            <StackPanel Margin="0,16,8,8" Orientation="Horizontal">
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Setting"
+                    Style="{StaticResource Rhyme-Icon-Button-Transparent}" />
+
+                <Button
+                    Margin="8,0,24,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Setting"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Icon-Button-Transparent}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Search"
+                    Style="{StaticResource Rhyme-Icon-Button-Primary}" />
+
+                <Button
+                    Margin="8,0,24,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Search"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Icon-Button-Primary}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="RemixIcon"
+                    Style="{StaticResource Rhyme-Icon-Button-Neutral}" />
+
+                <Button
+                    Margin="8,0,24,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="RemixIcon"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Icon-Button-Neutral}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="SendPlane"
+                    Style="{StaticResource Rhyme-Icon-Button-Outline}" />
+
+                <Button
+                    Margin="8,0"
+                    rhymeTheme:RhymeAssist.PrefixIcon="SendPlane"
+                    IsEnabled="False"
+                    Style="{StaticResource Rhyme-Icon-Button-Outline}" />
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

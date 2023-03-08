@@ -1,0 +1,182 @@
+﻿<UserControl
+    x:Class="RhymeThemeDemo.View.FieldsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rhymeTheme="http://virtualdmp.rhyme/xaml/themes"
+    xmlns:rhymeThemeDemo="clr-namespace:RhymeThemeDemo.ViewModel"
+    xmlns:service="clr-namespace:RhymeThemeDemo.Services"
+    d:DataContext="{d:DesignInstance rhymeThemeDemo:FieldsPageViewModel,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="默认文本输入框 (Outlined text)" />
+
+            <Grid Margin="0,16,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBox Margin="0,16" Text="简单的文本输入框" />
+
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Text="带图标的文本输入框" />
+
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.SuffixIcon="SendPlane"
+                    Text="带后缀图标的文本输入框" />
+
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.SuffixLabel="mm"
+                    Text="带后缀单位的文本输入框" />
+
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.SuffixIcon="SendPlane"
+                    rhymeTheme:RhymeAssist.SuffixLabel="mm"
+                    Text="带后缀文本图标的输入框" />
+
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="16,16"
+                    IsEnabled="False"
+                    Text="简单的文本输入框-禁用" />
+
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="16,24"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    IsEnabled="False"
+                    Text="带图标的文本输入框-禁用" />
+
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="16,24"
+                    rhymeTheme:RhymeAssist.SuffixIcon="SendPlane"
+                    IsEnabled="False"
+                    Text="带后缀图标的文本输入框-禁用" />
+
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="16,24"
+                    rhymeTheme:RhymeAssist.SuffixLabel="mm"
+                    IsEnabled="False"
+                    Text="带后缀单位的文本输入框-禁用" />
+
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Margin="16,24"
+                    rhymeTheme:RhymeAssist.SuffixIcon="SendPlane"
+                    rhymeTheme:RhymeAssist.SuffixLabel="mm"
+                    IsEnabled="False"
+                    Text="带后缀文本图标的输入框-禁用" />
+
+
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="0,16"
+                    rhymeTheme:RhymeAssist.InnerLabel="错误的文本输入框">
+                    <TextBox.Text>
+                        <Binding Path="RuleStr" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.InnerLabel="错误的文本输入框带图标"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add">
+                    <TextBox.Text>
+                        <Binding Path="RulesStr1" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.InnerLabel="注意：当发生异常时，后缀图标会被覆盖"
+                    rhymeTheme:RhymeAssist.SuffixIcon="SendPlane">
+                    <TextBox.Text>
+                        <Binding Path="RulesStr2" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.InnerLabel="错误的文本输入框带单位"
+                    rhymeTheme:RhymeAssist.SuffixLabel="L/Min">
+                    <TextBox.Text>
+                        <Binding Path="RulesStr3" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Margin="0,24"
+                    rhymeTheme:RhymeAssist.InnerLabel="错误的文本输入框带单位"
+                    rhymeTheme:RhymeAssist.PrefixIcon="Search"
+                    rhymeTheme:RhymeAssist.SuffixLabel="L/Min">
+                    <TextBox.Text>
+                        <Binding Path="RulesStr4" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

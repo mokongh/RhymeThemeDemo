@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+
+    <runtime Condition="'$(TargetFramework)'=='net6.0-windows'">
+      <AppContextSwitchOverrides value="Switch.System.Windows.DoNotScaleForDpiChanges=false" />
+    </runtime>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualDMP.Rhyme.Theme\VirtualDMP.Rhyme.Theme.csproj" />
+  </ItemGroup>
+
+</Project>

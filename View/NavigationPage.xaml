@@ -1,0 +1,64 @@
+﻿<UserControl
+    x:Class="RhymeThemeDemo.View.NavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rhymeTheme="http://virtualdmp.rhyme/xaml/themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="竖型导航栏 (Navigation Drawer)" />
+
+            <ListView
+                Width="240"
+                Margin="0,16"
+                HorizontalAlignment="Left"
+                rhymeTheme:RhymeAssist.HeadlineLabel="Title"
+                ItemsSource="{Binding NavigationItemSource}"
+                Style="{StaticResource Rhyme-Navigation-Drawer}">
+                <ListView.ItemContainerStyle>
+                    <Style BasedOn="{StaticResource Rhyme-Navigation-Drawer-Item}" TargetType="ListViewItem">
+                        <Setter Property="rhymeTheme:RhymeAssist.PrefixIcon" Value="{Binding PackIconKind}" />
+                        <Setter Property="Content" Value="{Binding NavigateLabel}" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="横向导航栏 (Navigation Bar)" />
+            <ListView
+                Margin="0,16"
+                ItemsSource="{Binding NavigationItemSource}"
+                Style="{StaticResource Rhyme-Navigation-Primary-Bar}">
+                <ListView.ItemContainerStyle>
+                    <Style BasedOn="{StaticResource Rhyme-Navigation-Primary-Bar-Item}" TargetType="ListViewItem">
+                        <Setter Property="rhymeTheme:RhymeAssist.PrefixIcon" Value="{Binding PackIconKind}" />
+                        <Setter Property="Content" Value="{Binding NavigateLabel}" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16" Orientation="Vertical">
+            <TextBlock Style="{StaticResource Md-Sys-Typescale-Body-Medium}" Text="选项卡 (Tab)" />
+            <StackPanel
+                Margin="0,16"
+                Background="{StaticResource Rhyme-Opacity-Surface-1}"
+                Orientation="Horizontal">
+                <RadioButton
+                    rhymeTheme:RhymeAssist.PrefixIcon="Add"
+                    Content="Label"
+                    Style="{StaticResource Rhyme-Radio-Button-Label}" />
+                <RadioButton Content="Label" Style="{StaticResource Rhyme-Radio-Button-Label}" />
+                <RadioButton
+                    rhymeTheme:RhymeAssist.PrefixIcon="Home"
+                    Content="Label"
+                    Style="{StaticResource Rhyme-Radio-Button-Label}" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
